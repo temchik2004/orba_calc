@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'NothingYouCouldDo';
+    src: url('/fonts/NothingYouCouldDo/NothingYouCouldDo.eot'); /* IE9 Compat Modes */
+    url('/fonts/NothingYouCouldDo/NothingYouCouldDo.woff') format('woff'), /* Pretty Modern Browsers */
+    url('/fonts/NothingYouCouldDo/NothingYouCouldDo.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('/fonts/NothingYouCouldDo/NothingYouCouldDo.svg') format('svg'); /* Legacy iOS */
+}
+body{
+    font-family: NothingYouCouldDo;
+    font-size: 0.7em;
+}
+header{
+    width: 100%;
+    text-align: center;
+}
