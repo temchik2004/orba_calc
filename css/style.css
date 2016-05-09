@@ -1,13 +1,15 @@
 @font-face {
     font-family: 'NothingYouCouldDo';
-    src: url('/fonts/NothingYouCouldDo/NothingYouCouldDo.eot');
-    url('/fonts/NothingYouCouldDo/NothingYouCouldDo.woff') format('woff'),
-    url('/fonts/NothingYouCouldDo/NothingYouCouldDo.ttf')  format('truetype'),
-    url('/fonts/NothingYouCouldDo/NothingYouCouldDo.svg') format('svg');
+    src: url('../fonts/NothingYouCouldDo/NothingYouCouldDo.eot'),
+    url('../fonts/NothingYouCouldDo/NothingYouCouldDo.woff') format('woff'),
+    url('../fonts/NothingYouCouldDo/NothingYouCouldDo.ttf')  format('truetype'),
+    url('../fonts/NothingYouCouldDo/NothingYouCouldDo.svg') format('svg');
 }
 body{
+    min-width: 310px;
     font-family: NothingYouCouldDo;
-    font-size: 0.7em;
+    font-size: 0.9em;
+    overflow-x: hidden;
 }
 header{
     width: 100%;
@@ -20,10 +22,14 @@ footer{
     width: 99%;
     text-align: center;
     font-size: 0.9em;
-    clear: both;
 }
 section{
-    height: 510px;
+    min-height: 510px;
+    height: 80vh;
+    display: -webkit-box;      /* Fix for old iOS 6, Safari 3.1 */
+    display: -ms-flexbox;      /* Fix for IE 10 */
+    display: -moz-box;         /* Fix for Firefox 19 */
+    display: -webkit-flex;     /* Fix for IOS 8 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,6 +50,7 @@ section{
     margin: 30px 27px 30px 25px;
     background-color: #ededed;
     border-radius: 9px;
+    overflow: hidden;
 }
 .buttons{
     padding: 0 10px;
@@ -51,14 +58,28 @@ section{
 .button{
     background-color: #7d0031;
     border: none;
-    border-radius: 32px;
+    border-radius: 50%;
     margin: 12px;
     height: 64px;
     width: 64px;
-    font-size: 3.25em;
+    min-width: 64px;    /* Fix for IOS 9+ */
+    max-width: 64px;    /* Fix for IOS 9+ */
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 26px;
     font-family: NothingYouCouldDo;
+    line-height: 26px;
     color: white;
 }
 .button:focus{
-    outline: 0;
+    outline: 0;     /* Fix for chrome, chromium */
 }
+.button:hover{
+    border: solid 3px rgba(255,255,255,0.9);
+}
+.button:active{
+    background-color: #500521;
+    border: solid 3px rgba(255,255,255,0.9);
+}
+
